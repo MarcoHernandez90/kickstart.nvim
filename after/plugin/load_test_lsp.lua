@@ -1,6 +1,6 @@
 -- local client = vim.lsp.start_client {
 --   name = 'eductionalsp',
---   cmd = { '/home/sora/w/doju/eductionalsp/main' },
+--   cmd = { '/home/conf/w/doju/eductionalsp/main' },
 -- }
 --
 -- if not client then

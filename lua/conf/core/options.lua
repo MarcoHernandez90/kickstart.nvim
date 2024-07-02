@@ -30,7 +30,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -42,7 +42,7 @@ vim.opt.smartindent = true
 vim.opt.undofile = true
 
 -- You should probably create a new line when you reach this column color
-vim.opt.colorcolumn = '100'
+vim.opt.colorcolumn = '80'
 
 -- Tab size 2
 vim.opt.tabstop = 2
@@ -72,7 +72,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -81,4 +81,18 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 0
+
+-- Custom options
+vim.opt.termguicolors = true
+vim.opt.autoindent = true
+vim.opt.smarttab = true
+vim.opt.cindent = true
+vim.opt.foldmethod = 'manual'
+vim.opt.belloff = 'all'
+vim.opt.guicursor = 'n-v-c-i:block'
+vim.opt.rtp = vim.opt.rtp + '~/.fzf'
+vim.opt.swapfile = true
+vim.opt.backup = false
+vim.opt.undodir = '/home/marco.hernandez/.cache/.nvim/undodir'
+-- vim.opt.python_highlight_all = 1

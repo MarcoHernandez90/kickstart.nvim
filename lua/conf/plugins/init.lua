@@ -12,7 +12,15 @@ return {
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      opleader = {
+        line = '<Leader>cc',
+        block = '<Leader>c<Leader>',
+      },
+    },
+  },
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -25,7 +33,7 @@ return {
       signs = {
         add = { text = '+' },
         change = { text = '~' },
-        delete = { text = '_' },
+        delete = { text = '-' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
@@ -58,7 +66,10 @@ return {
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>['] = { name = 'Diagnostics', _ = 'which_key_ignore' },
+        ['<leader>n'] = { name = '[N]vimTree', _ = 'which_key_ignore' },
+        ['<leader>o'] = { name = '[O]pen', _ = 'which_key_ignore' },
+        -- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       }
     end,
   },
@@ -79,6 +90,46 @@ return {
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+    opts = {
+      -- on_colors = function (colors)
+      --   colors.git.add = colors.green
+      --   colors.git.change = colors.orange
+      --   colors.git.delete = colors.red
+      -- end,
+      on_highlights = function(highlights, colors)
+        highlights.NvimTreeGitFileDirtyHL = {
+          fg = colors.cyan
+        }
+        highlights.NvimTreeGitFileRenamed = {
+          fg = colors.cyan
+        }
+        highlights.NvimTreeGitFileDeletedHL = {
+          fg = colors.red
+        }
+        highlights.NvimTreeGitFileNewHL = {
+          fg = colors.orange
+        }
+        highlights.NvimTreeGitFileStagedHL = {
+          fg = colors.green
+        }
+
+        highlights.NvimTreeGitFolderDirtyHL = {
+          fg = colors.cyan
+        }
+        highlights.NvimTreeGitFolderRenamed = {
+          fg = colors.cyan
+        }
+        highlights.NvimTreeGitFolderDeletedHL = {
+          fg = colors.red
+        }
+        highlights.NvimTreeGitFolderNewHL = {
+          fg = colors.orange
+        }
+        highlights.NvimTreeGitFolderStagedHL = {
+          fg = colors.green
+        }
+      end,
+    }
   },
 
   -- Highlight todo, notes, etc in comments

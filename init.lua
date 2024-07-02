@@ -22,7 +22,5 @@
 
 --]]
 
-require 'sora.core'
-require 'sora.lazy'
-
-
+require 'conf.core'
+require 'conf.lazy'
